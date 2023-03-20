@@ -55,27 +55,80 @@ class List {
       node.next = this.head;
       this.tail = node;
     } else {
-      let current = this.head;
+      let currentNode = this.head;
       let i = 0;
 
       while (i < index - 1) {
-        current = current.next;
+        currentNode = currentNode.next;
         i++;
       }
-      node.next = current.next;
-      current.next = node;
+      node.next = currentNode.next;
+      currentNode.next = node;
     }
     this.size++;
+  }
+
+  delete(index) {
+    if (index < 0 || index >= this.size) {
+      throw new Error("Error. Index out of range.");
+    }
+    let deletedNode = null;
+    if (this.size === 1) {
+      deletedNode = this.head;
+      this.head = null;
+      this.tail = null;
+    } else {
+      let prevNode = null;
+      let currentNode = this.head;
+      for (let i = 0; i < index; i++) {
+        prevNode = currentNode;
+        currentNode = currentNode.next;
+      }
+      deletedNode = currentNode;
+
+      if (index === 0) {
+        this.head = this.head.next;
+      } else if (index === this.size - 1) {
+        this.tail = prevNode;
+        prevNode.next = this.head;
+      } else {
+        prevNode.next = currentNode.next;
+      }
+    }
+    this.size--;
+    return deletedNode.value;
+  }
+
+  deleteAll(value) {
+    let currentNode = this.head;
+    let prevNode = this.tail;
+    for (let i = 0; i < this.size; i++) {
+      if (currentNode.value === value) {
+        if (i === 0) {
+          this.head = this.head.next;
+          this.tail.next = this.head;
+          prevNode = this.tail;
+        } else {
+          prevNode.next = currentNode.next;
+          if (i === this.size - 1) this.tail = prevNode;
+        }
+        this.size--;
+        i--;
+      } else {
+        prevNode = currentNode;
+      }
+      currentNode = currentNode.next;
+    }
   }
 
   get(index) {
     if (index < 0 || index >= this.size) {
       throw new Error("Error. Index out of range.");
     }
-    let current = this.head;
+    let currentNode = this.head;
     for (let i = 0; i < index; i++) {
-      current = current.next;
+      currentNode = currentNode.next;
     }
-    return current.value;
+    return currentNode.value;
   }
 }
