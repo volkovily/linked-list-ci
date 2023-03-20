@@ -132,3 +132,5 @@ class List {
     return currentNode.value;
   }
 }
+
+module.exports = List;
