@@ -39,3 +39,12 @@ console.log(
   clonedList.get(1),
   clonedList.get(2)
 );
+
+const testList = new List();
+
+testList.append("a");
+testList.append("x");
+testList.append("x");
+testList.append("x");
+console.log('Index of first "x"', testList.findFirst("x"));
+console.log('Index of last "x"', testList.findLast("x"));

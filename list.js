@@ -157,6 +157,31 @@ class List {
       currentNode = next;
     }
   }
+
+  findFirst(value) {
+    let currentNode = this.head;
+    let firstIndex = -1;
+    for (let i = 0; i < this.size; i++) {
+      if (currentNode.value === value) {
+        firstIndex = i;
+        return firstIndex;
+      }
+      currentNode = currentNode.next;
+    }
+    return firstIndex;
+  }
+
+  findLast(value) {
+    let currentNode = this.head;
+    let lastIndex = -1;
+    for (let i = 0; i < this.size; i++) {
+      if (currentNode.value === value) {
+        lastIndex = i;
+      }
+      currentNode = currentNode.next;
+    }
+    return lastIndex;
+  }
 }
 
 module.exports = List;
