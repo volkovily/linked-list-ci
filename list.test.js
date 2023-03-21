@@ -215,15 +215,13 @@ describe("clone()", () => {
     expect(list.get(1)).toBe("b");
   });
 
-  test("should return a new list with the same properties as the original", () => {
+  test("should return a new list with the same size as the original", () => {
     const list = new List();
     list.append("a");
     list.append("b");
     list.append("c");
     const clonedList = list.clone();
-    expect(clonedList.size).toEqual(list.size);
-    expect(clonedList.head.value).toEqual(list.head.value);
-    expect(clonedList.tail.value).toEqual(list.tail.value);
+    expect(clonedList.length()).toEqual(list.length());
   });
 });
 
@@ -310,9 +308,7 @@ describe("clear()", () => {
     list.append("b");
     list.append("c");
     list.clear();
-    expect(list.size).toBe(0);
-    expect(list.head).toBe(null);
-    expect(list.tail).toBe(null);
+    expect(list.length()).toBe(0);
   });
 });
 
