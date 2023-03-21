@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/volkovily/linked-list-ci/issues"
   },
-  "homepage": "https://github.com/volkovily/linked-list-ci#readme"
+  "homepage": "https://github.com/volkovily/linked-list-ci#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
 }
