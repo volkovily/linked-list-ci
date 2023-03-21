@@ -191,7 +191,7 @@ class List {
 
   extend(list) {
     let currentNode = list.head;
-    while (currentNode !== null) {
+    for (let i = 0; i < list.size; i++) {
       this.append(currentNode.value);
       currentNode = currentNode.next;
     }
