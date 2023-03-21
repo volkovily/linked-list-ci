@@ -131,6 +131,32 @@ class List {
     }
     return currentNode.value;
   }
+
+  clone() {
+    const clonedList = new List();
+    let currentNode = this.head;
+    for (let i = 0; i < this.size; i++) {
+      clonedList.append(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return clonedList;
+  }
+
+  reverse() {
+    if (this.size <= 1) return;
+    let currentNode = this.head;
+    this.head = this.tail;
+    this.tail = currentNode;
+
+    let prevNode = null;
+    let next;
+    for (let i = 0; i < this.size; i++) {
+      next = currentNode.next;
+      currentNode.next = prevNode;
+      prevNode = currentNode;
+      currentNode = next;
+    }
+  }
 }
 
 module.exports = List;

@@ -19,3 +19,23 @@ console.log("List:", list.get(0), list.get(1), list.get(2));
 list.deleteAll("x");
 console.log("List length:", list.length());
 console.log("List:", list.get(0));
+
+list.append("b");
+list.append("c");
+
+const clonedList = list.clone();
+console.log("Cloned List length:", clonedList.length());
+console.log(
+  "Cloned List:",
+  clonedList.get(0),
+  clonedList.get(1),
+  clonedList.get(2)
+);
+
+clonedList.reverse();
+console.log(
+  "Cloned List reversed:",
+  clonedList.get(0),
+  clonedList.get(1),
+  clonedList.get(2)
+);
