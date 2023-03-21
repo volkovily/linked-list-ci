@@ -40,11 +40,19 @@ console.log(
   clonedList.get(2)
 );
 
-const testList = new List();
+const list2 = new List();
 
-testList.append("a");
-testList.append("x");
-testList.append("x");
-testList.append("x");
-console.log('Index of first "x"', testList.findFirst("x"));
-console.log('Index of last "x"', testList.findLast("x"));
+list2.append("a");
+list2.append("x");
+list2.append("x");
+list2.append("x");
+console.log('Index of first "x" in list2:', list2.findFirst("x"));
+console.log('Index of last "x" in list2:', list2.findLast("x"));
+
+list2.clear();
+console.log("list2 length after clear:", list2.length());
+
+console.log("List length:", list.length());
+console.log("clonedList length:", clonedList.length());
+list.extend(clonedList);
+console.log("List length after extend:", list.length());

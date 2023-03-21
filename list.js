@@ -182,6 +182,20 @@ class List {
     }
     return lastIndex;
   }
+
+  clear() {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
+
+  extend(list) {
+    let currentNode = list.head;
+    while (currentNode !== null) {
+      this.append(currentNode.value);
+      currentNode = currentNode.next;
+    }
+  }
 }
 
 module.exports = List;
