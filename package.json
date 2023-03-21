@@ -1,0 +1,19 @@
+{
+  "name": "linked-list-ci",
+  "version": "1.0.0",
+  "description": "lab2",
+  "main": "list.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovily/linked-list-ci.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/volkovily/linked-list-ci/issues"
+  },
+  "homepage": "https://github.com/volkovily/linked-list-ci#readme"
+}
